@@ -42,7 +42,7 @@
             <legend>стоимость в сутки(р):</legend>
             <input type="text" name="cost-min" placeholder="от 0">
             <input type="text" name="cost-max" placeholder="до 3000">
-            <input type="range" name="cost-range" min="0" max="3000">
+            <div><!--двойной ползунок--></div>
           </fieldset>
           <button type="submit">Показать</button>
         </form>
@@ -55,8 +55,8 @@
           <li><button type="button">по цене</button></li>
           <li><button type="button">по типу</button></li>
           <li><button type="button">по рейтингу</button></li>
-          <li><button type="button" class="visually-hidden">up</button></li>
-          <li><button type="button" class="visually-hidden">bottom</button></li>
+          <li><button type="button">от меньшего к большему</button></li>
+          <li><button type="button">от большего к меньшему</button></li>
         </ul>
       </section>
 
