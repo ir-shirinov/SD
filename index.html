@@ -4,6 +4,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Седона</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
 
@@ -31,8 +33,10 @@
         <p>рассмотрим 5 причин, по которым седона круче, чем гранд каньон</p>
         <ul class="features-item">
           <li>
-            <h3>настоящий городок</h3>
-            <p>-№1-<br>седона - не атракцион для туристов, там течет своя жизнь</p>
+            <div class="features-item-one">
+              <h3>настоящий городок</h3>
+              <p>- №1 -<br>седона - не атракцион для туристов, там течет своя жизнь</p>
+            </div>
             <div class="features-house">
               <h4>Жилье</h4>
               <p>рекомендуем пожить в настоящем мотеле, все как в кино!</p>
@@ -69,14 +73,14 @@
         <h2 class="visually-hidden">Бронирование отеля</h2>
         <b>заинтересовались?</b>
         <p>укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в седоне</p>
-        <button type="button">поиск гостиницы в седоне</button>
+        <button class="btn-find-hotel" type="button">поиск гостиницы в седоне</button>
         <div class='hotels-data model'>
           <form action="#" method="get">
             <label>Дата заезда:<input type="date" name="date-in"><span class="hotel-cal">cal</span></label>
             <label>Дата выезда:<input type="date" name="date-out"><span class="hotel-cal">cal</span></label>
             <label>Взрослые:<input type="number" name="adult" min="1"></label>
             <label>Дети:<input type="number" name="child" min="0"></label>
-            <button type="submit">Найти</button>
+            <button  class="btn-find" type="submit">Найти</button>
           </form>
         </div>
       </section>
