@@ -79,16 +79,40 @@
           <h2 class="visually-hidden">Бронирование отеля</h2>
           <b>заинтересовались?</b>
           <p>укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в седоне</p>
+          <div class="container-hotels">
           <button class="btn-find-hotel" type="button">поиск гостиницы в седоне</button>
-          <div class='hotels-data model'>
-            <form action="#" method="get">
-              <label>Дата заезда:<input type="date" name="date-in"><span class="hotel-cal">cal</span></label>
-              <label>Дата выезда:<input type="date" name="date-out"><span class="hotel-cal">cal</span></label>
-              <label>Взрослые:<input type="number" name="adult" min="1"></label>
-              <label>Дети:<input type="number" name="child" min="0"></label>
-              <button  class="btn-find" type="submit">Найти</button>
+            <form class='hotels-data model' action="#" method="get">
+
+              <div class="modal-container">
+                <label for="date-in">Дата заезда:</label>
+                <input type="text" class="text"  name="date-in" id="date-in" placeholder="24 апреля 2017">
+                <span class="hotel-cal"></span>
+              </div>
+
+              <div class="modal-container">
+                <label for="date-out">Дата выезда:</label>
+                <input type="text" class="text" name="date-out" id="date-out" placeholder="4 июля 2017">
+                <span class="hotel-cal"></span>
+              </div>
+
+              <div class="modal-container ">
+                <label for="adult">Взрослые:</label>
+                <div class="adult-container">
+                  <div class="minus">-</div>
+                  <input class="number-cost" type="text" name="adult" id="adult" placeholder="2">
+                  <div class="plus">+</div>
+                </div>
+                <label for="child">Дети:</label>
+                <div class="adult-container">
+                  <div class="minus">-</div>
+                  <input class="number-cost" type="text" name="child" id="child" placeholder="0">
+                  <div class="plus">+</div>
+                </div>
+              </div>
+
+              <button class="btn-find" type="submit">Найти</button>
             </form>
-          </div>
+          <div>
         </section>
 
 
