@@ -98,15 +98,15 @@
               <div class="modal-container ">
                 <label for="adult">Взрослые:</label>
                 <div class="adult-container">
-                  <div class="minus">-</div>
+                  <div class="minus minus-adult">-</div>
                   <input class="number-cost" type="text" name="adult" id="adult" placeholder="2">
-                  <div class="plus">+</div>
+                  <div class="plus plus-adult">+</div>
                 </div>
                 <label for="child">Дети:</label>
                 <div class="adult-container">
-                  <div class="minus">-</div>
+                  <div class="minus minus-child">-</div>
                   <input class="number-cost" type="text" name="child" id="child" placeholder="0">
-                  <div class="plus">+</div>
+                  <div class="plus plus-child">+</div>
                 </div>
               </div>
 
@@ -120,6 +120,7 @@
 
       <footer class="main-footer">
         <img src="img/map_fix.jpg" alt="Седона находится между Уинслоу и престон" width="1200" height="593">
+        <iframe class="iframe-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4806.628547345311!2d55.92217520945663!3d52.96076064699018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x417d6a10b4c9e9b3%3A0x2e13cbb1b9c3486!2z0JrQuNC90L7Qt9Cw0Lsg0JPQlNCa!5e0!3m2!1sru!2sru!4v1534144463684" width="100%" height="593" frameborder="0" style="border:0" allowfullscreen></iframe>
       <div class="footer-container">
         <span>#visitesedona</span>
 
@@ -143,6 +144,78 @@
 
       </footer>
     </div>
+    <script>
+      var openModal = document.querySelector('.btn-find-hotel');
+      var hotel = document.querySelector('.hotels-data');
+      var find = document.querySelector('.btn-find');
+      var adult = document.querySelector('[name=adult]');
+      var child = document.querySelector('[name=child]');
+      var saveChild = localStorage.getItem('child');
+      var saveAdult = localStorage.getItem('adult');
+      var plusChild = document.querySelector('.plus-child');
+      var minusChild = document.querySelector('.minus-child');
+      var plusAdult = document.querySelector('.plus-adult');
+      var minusAdult = document.querySelector('.minus-adult');
+
+      plusChild.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        child.value++;
+      });
+
+      plusAdult.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        adult.value++;
+      });
+
+      minusChild.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        child.value--;
+      });
+
+      minusAdult.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        adult.value--;
+      });
+
+
+
+
+
+
+
+
+
+
+        openModal.addEventListener('click', function (evt) {
+          evt.preventDefault();
+          hotel.classList.toggle('modal-open');
+          if (saveChild) {
+            child.value = saveChild;
+          };
+           if (saveAdult) {
+            adult.value = saveAdult;
+          };
+
+        } );
+
+        find.addEventListener('click', function (evt) {
+          evt.preventDefault();
+          hotel.classList.toggle('modal-open');
+          localStorage.setItem('adult',adult.value );
+          localStorage.setItem('child',child.value  );
+        } );
+
+
+        window.addEventListener('keydown', function (evt) {
+          if (evt.keyCode === 27) {
+            if (hotel.classList.contains('modal-open')) {
+              hotel.classList.remove('modal-open');
+            };
+          };
+
+        } );
+    </script>
+
   </body>
 
 </html>
